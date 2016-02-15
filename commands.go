@@ -356,7 +356,7 @@ func equalStringPtrs(a, b *string) bool {
 	if a == nil && b == nil {
 		return true
 	} else if a != nil && b != nil {
-		return *a == *b
+		return unescaper.Replace(*a) == unescaper.Replace(*b)
 	} else {
 		return false
 	}
